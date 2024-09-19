@@ -1,0 +1,36 @@
+body {
+
+    background-color: gray;
+
+}
+
+.intro{
+    position: fixed;
+    translate: 200px 300px;
+    display: block;
+    max-width: fit-content;
+
+    p{
+        display: flex;
+        max-width: fit-content;
+        font-size: 20px;
+        font-family: monospace;
+        border-right: 0.1em solid;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(24), cursor .7s step-end infinite alternate;
+        animation-delay: 0s;
+        animation-play-state: running;
+    
+    }
+}
+
+@keyframes typing {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
+/* blinking cursor animation */
+/* @keyframes cursor {
+    50% {border-color: transparent;}
+} */
