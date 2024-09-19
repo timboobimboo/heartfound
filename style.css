@@ -10,7 +10,7 @@ body {
     display: block;
     max-width: fit-content;
 
-    p{
+    p {
         display: flex;
         max-width: fit-content;
         font-size: 20px;
@@ -21,6 +21,7 @@ body {
         animation: typing 3s steps(24), cursor .7s step-end infinite alternate;
         animation-delay: 0s;
         animation-play-state: running;
+        animation-fill-mode: forwards;
     
     }
 }
@@ -31,6 +32,6 @@ body {
 }
 
 /* blinking cursor animation */
-/* @keyframes cursor {
+@keyframes cursor {
     50% {border-color: transparent;}
-} */
+}
