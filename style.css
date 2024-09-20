@@ -1,30 +1,73 @@
+:root{
+    --introX: 20vw;
+    --introY: -20vh;
+    --text-color: rgb(200, 200,200,1);
+    --text-transparent: rgba(200,200,200,0);
+    --red: rgb(245, 100, 100);
+    --lred: rgb(238, 139, 122);
+    --orange:rgb(240, 152, 38);
+    --lorange:rgb(248, 180, 117);
+    --yellow:rgb(247, 243, 40) ;
+    --lyellow:rgb(247, 239, 137) ;
+    --green:rgb(92, 235, 73) ;
+    --lgreen:rgb(201, 241, 136) ;
+    --bloo:rgb(53, 179, 230) ;
+    --lbloo:rgb(141, 204, 233) ;
+    --indigo:rgb(101, 110, 238) ;
+    --lindigo:rgb(143, 130, 238) ;
+    --purple:rgb(208, 101, 235) ;
+    --lpurple:rgb(223, 108, 217) ;
+}
+
 body {
+    color: var(--text-color);
+    background-color: rgb(26, 26, 26);
+    overflow: hidden;
+    
+}
 
-    background-color: gray;
 
+p {
+    color: var(--text-color);
+    display: block;
+    max-width: fit-content;
+    margin: 0.5em 0 0.5em 0;
+    font-size: 20px;
+    font-family: monospace;
+    border-right: 0.1em solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(24), cursor .7s step-end infinite alternate;
+    animation-delay: 0s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
 }
 
 .intro{
-    position: fixed;
-    translate: 200px 300px;
+    position: absolute;
+    translate: var(--introX) var(--introY);
     display: block;
     max-width: fit-content;
-
-    p {
-        display: flex;
-        max-width: fit-content;
-        font-size: 20px;
-        font-family: monospace;
-        border-right: 0.1em solid;
-        white-space: nowrap;
-        overflow: hidden;
-        animation: typing 3s steps(24), cursor .7s step-end infinite alternate;
-        animation-delay: 0s;
-        animation-play-state: running;
-        animation-fill-mode: forwards;
-    
-    }
+    z-index: 1;
 }
+
+.intro-button{
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 95vh;
+}
+
+#intro2 {
+    translate: var(--introX) var(--introY);
+    display: none;
+}
+
 
 @keyframes typing {
     0% {width: 0%;}
@@ -34,4 +77,81 @@ body {
 /* blinking cursor animation */
 @keyframes cursor {
     50% {border-color: transparent;}
+}
+
+.fadeoutwindow {
+    display: inline-block;
+    width: max-content;
+}
+
+.fadeout {
+    /* text-align: right; */
+    display: inline-flex;
+    max-width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    /* animation-play-state: paused; */
+}
+
+@keyframes typeout {
+    0% {width: 100%;}
+    100% {width: 0%; }
+}
+
+.rainbow {
+    position: inherit;
+    background-clip: text;
+    color: var(--text-color);
+    animation: none;
+}
+
+
+@keyframes rainbow0 {
+    100% {
+        background-image: linear-gradient(var(--red), var(--lred));
+        color: var(--text-transparent);
+    }
+}
+
+@keyframes rainbow1 {
+    100% {
+        background-image: linear-gradient(var(--orange), var(--lorange));
+        color: var(--text-transparent);
+    }
+}
+
+@keyframes rainbow2 {
+    100% {
+        background-image: linear-gradient(var(--yellow), var(--lyellow));
+        color: var(--text-transparent);
+    }
+}
+
+@keyframes rainbow3 {
+    100% {
+        background-image: linear-gradient(var(--green), var(--lgreen));
+        color: var(--text-transparent);
+    }
+}
+
+@keyframes rainbow4 {
+        100% {
+        background-image: linear-gradient(var(--bloo), var(--lbloo));
+        color: var(--text-transparent);
+    }
+}
+
+@keyframes rainbow5 {
+        100% {
+        background-image: linear-gradient(var(--indigo), var(--lindigo));
+        color: var(--text-transparent);
+    }
+}
+
+@keyframes rainbow6 {
+    
+    100% {
+        background-image: linear-gradient(var(--purple), var(--lpurple));
+        color: var(--text-transparent);
+    }
 }
