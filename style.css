@@ -226,7 +226,7 @@ p {
     translate: 0 30vh;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(/Assets/img/logo/HF_CP.png);
+    background-image: url(Assets/img/logo/HF_CP.png);
     background-position: center;
     animation: glitch 7s steps(1) 1.5s both;
 }
@@ -235,17 +235,17 @@ p {
     0%{ background-image: none;}
 
     1%,10%{
-        background-image: url(/Assets/img/logo/HF_CP_1.png);
+        background-image: url(Assets/img/logo/HF_CP_1.png);
         filter:hue-rotate(300deg);
         background-position: 10px -40px;
     }
     1%, 9%{
-        background-image: url(/Assets/img/logo/HF_CP_2.png);
+        background-image: url(Assets/img/logo/HF_CP_2.png);
         filter:hue-rotate(60deg);
         background-position: 20px -20px;
     }
     2%, 8%{
-        background-image: url(/Assets/img/logo/HF_CP.png);
+        background-image: url(Assets/img/logo/HF_CP.png);
         filter:hue-rotate(0deg);
         background-position: center;
 
@@ -253,82 +253,82 @@ p {
     }
 
     11%,20%{
-        background-image: url(/Assets/img/logo/HF_ARCN_1.png);
+        background-image: url(Assets/img/logo/HF_ARCN_1.png);
         filter:hue-rotate(300deg);
         background-position: 30px -20px;
     }
     12%, 19%{
-        background-image: url(/Assets/img/logo/HF_ARCN_2.png);
+        background-image: url(Assets/img/logo/HF_ARCN_2.png);
         filter:hue-rotate(60deg);
         background-position: 40px -10px;
     }
     13%, 17%{
-        background-image: url(/Assets/img/logo/HF_ARCN.png);
+        background-image: url(Assets/img/logo/HF_ARCN.png);
         filter:hue-rotate(0deg);
         background-position: center;
 
     }
 
     21%,30%{
-        background-image: url(/Assets/img/logo/HF_TRON_1.png);
+        background-image: url(Assets/img/logo/HF_TRON_1.png);
         filter:hue-rotate(300deg);
         background-position: 45px -50px;
     }
     22%, 29%{
-        background-image: url(/Assets/img/logo/HF_TRON_2.png);
+        background-image: url(Assets/img/logo/HF_TRON_2.png);
         filter:hue-rotate(60deg);
         background-position: 30px -45px;
     }
     23%, 27%{
-        background-image: url(/Assets/img/logo/HF_TRON.png);
+        background-image: url(Assets/img/logo/HF_TRON.png);
         filter:hue-rotate(0deg);
         background-position: center;
     }
 
     31%,40%{
-        background-image: url(/Assets/img/logo/HF_SPDV_1.png);
+        background-image: url(Assets/img/logo/HF_SPDV_1.png);
         filter:hue-rotate(300deg);
         background-position: 33px -50px;
     }
     32%, 39%{
-        background-image: url(/Assets/img/logo/HF_SPDV_2.png);
+        background-image: url(Assets/img/logo/HF_SPDV_2.png);
         filter:hue-rotate(60deg);
         background-position: 40px 20px;
     }
     33%, 37%{
-        background-image: url(/Assets/img/logo/HF_SPDV.png);
+        background-image: url(Assets/img/logo/HF_SPDV.png);
         filter:hue-rotate(0deg);
         background-position: center;
     }
 
     41%,50%{
-        background-image: url(/Assets/img/logo/HF_BR_1.png);
+        background-image: url(Assets/img/logo/HF_BR_1.png);
         filter:hue-rotate(300deg);
         background-position: 30px -20px;
     }
     42%, 49%{
-        background-image: url(/Assets/img/logo/HF_BR_2.png);
+        background-image: url(Assets/img/logo/HF_BR_2.png);
         filter:hue-rotate(60deg);
         background-position: -20px -10px;
     }
     43%, 47%{
-        background-image: url(/Assets/img/logo/HF_BR.png);
+        background-image: url(Assets/img/logo/HF_BR.png);
         filter:hue-rotate(0deg);
         background-position: center;
     }
 
     51%,60%{
-        background-image: url(/Assets/img/logo/HF_GS_1.png);
+        background-image: url(Assets/img/logo/HF_GS_1.png);
         filter:hue-rotate(300deg);
         background-position: 10px -20px;
     }
     52%, 59%{
-        background-image: url(/Assets/img/logo/HF_GS_2.png);
+        background-image: url(Assets/img/logo/HF_GS_2.png);
         filter:hue-rotate(60deg);
         background-position: 20px -10px;
     }
     53%, 57%{
-        background-image: url(/Assets/img/logo/HF_GS.png);
+        background-image: url(Assets/img/logo/HF_GS.png);
         filter:hue-rotate(0deg);
         background-position: center;
     }
@@ -347,7 +347,7 @@ p {
     translate: -0vw 5vh;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(/Assets/img/logo/HF_FINAL.png);
+    background-image: url(Assets/img/logo/HF_FINAL.png);
     background-position: center;
     animation: hf-glitch 1.5s steps(1) both, hf-scale 1.5s forwards;
     animation-delay: 7s;
@@ -357,24 +357,24 @@ p {
     0%{ background-image: none;}
     
     1% {
-        background-image: url(/Assets/img/logo/HF_FINAL_1.png);
+        background-image: url(Assets/img/logo/HF_FINAL_1.png);
         translate: -10px 10px;
         filter: hue-rotate(-180deg);
     }
     5%, 30%, 65%{
-        background-image: url(/Assets/img/logo/HF_FINAL_2.png);
+        background-image: url(Assets/img/logo/HF_FINAL_2.png);
         translate: 5px 7px;
         filter: hue-rotate(90deg);
     }
 
     10%, 40%, 68%{
-        background-image: url(/Assets/img/logo/HF_FINAL_1.png);
+        background-image: url(Assets/img/logo/HF_FINAL_1.png);
         translate: -0px 20px;
         filter: hue-rotate(-45deg);
 
     }
     70%{
-        background-image: url(/Assets/img/logo/HF_FINAL.png);
+        background-image: url(Assets/img/logo/HF_FINAL.png);
         translate: center;
 
     }
