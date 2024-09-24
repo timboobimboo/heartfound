@@ -7,6 +7,13 @@ const introP1 = intro1.children;
 const introP2 = intro2.children;
 
 const introBtn1 = document.getElementById('introBtn1');
+const introBtn2 = document.getElementById('introBtn2');
+const introBtn = document.getElementsByClassName('intro-button');
+
+const fadeout = document.getElementsByClassName('fadeout');
+const rainbow = document.getElementsByClassName('rainbow');
+
+console.log(introP2)
 
 // Intro1 Animation
 for (let i=0; i < introP1.length ; i++) {
@@ -53,11 +60,13 @@ for (let i=0; i < introP2.length ; i++) {
 
     var prevSib = introP2[i].previousElementSibling;
 
+    // start conditiontion
     introP2[i].style.width = '0%';
     introP2[i].style.animation = 'typing ' + animationTime + 's steps(' + characterCount + '), cursor .7s step-end infinite alternate'
     introP2[i].style.animationDelay = '1s';
     introP2[i].style.animationFillMode = 'forwards';
 
+    // animation sequence
     if (i > 0)  {
         introP2[i].style.border = '0';
         introP2[i].style.animationPlayState  = 'paused';
@@ -69,22 +78,23 @@ for (let i=0; i < introP2.length ; i++) {
             introP2[i].style.animationPlayState = 'running';
         }
     }
-
+    
     introP2[i].addEventListener("animationend", delCur)
 
     function delCur() {
-        introP2[i].style.borderRight = '0';
+        introP2[i].style.border = '0';
     }
-
-
-
-
-
 
 }
 
+// Target last textbox
+const introP2End = intro2.lastElementChild;
+introP2End.addEventListener("animationend", introSeq2);
+
+
+
+
 // FadeOut Animation
-const fadeout = document.getElementsByClassName('fadeout');
 for (let m = 0; m < fadeout.length; m++) {
 
     var fadeoutParent = fadeout[m].parentElement.parentElement;
@@ -97,9 +107,6 @@ for (let m = 0; m < fadeout.length; m++) {
 }
 
 // rainbow animation
-const rainbow = document.getElementsByClassName('rainbow');
-console.log(rainbow);
-
 for (let n = 0; n < rainbow.length; n++) {
 
     var rainbowParent = rainbow[n].parentElement;
@@ -109,8 +116,23 @@ for (let n = 0; n < rainbow.length; n++) {
     function rainbowPlay() {
         rainbow[n].style.animation = 'rainbow'+[n] + ' 2s forwards';
     }
-    console.log(rainbowParent)
+}
 
+const introOptions = document.getElementById('intro-options');
+const optionsBtn = introOptions.children;
+for (let i=0;i<optionsBtn.length;i++) {
+    optionsBtn[i].style.width = '0%';
+    optionsBtn[i].style.animationPlayState='paused';
+    optionsBtn[i].style.border = '0';
+    optionsBtn[i].style.animationFillMode = 'forwards';
+
+    introP2End.addEventListener("animationend", optionsShow);
+
+    function optionsShow() {
+        optionsBtn[i].style.animationDelay = '2s';
+        optionsBtn[i].style.animationPlayState='running';
+
+    }
 }
 
 function introSeq2() {
@@ -121,6 +143,25 @@ function introSeq2() {
         introP2[i].style.border = '0';
     }
 
+    for (let i=0; i < introBtn.length ; i++) {
+        introBtn[i].style.cursor = 'default';
+    }
+
+    for (let n = 0; n < rainbow.length; n++) {
+        rainbow[n].style.backgroundImage = 'var(--gradient' + [n] +')';
+        rainbow[n].style.color = 'var(--text-transparent)';
+    }
+
+    for (let m = 0; m < fadeout.length; m++) {
+        fadeout[m].style.width = '0%';
+    }
+
+    for (let i=0; i < optionsBtn.length; i++) {
+        optionsBtn[i].style.animationDelay = '1.5s';
+        optionsBtn[i].style.animationPlayState='running';
+    }
+
+    introBtn2.onclick = null;
 }
 
 function introSeq1() {
@@ -128,3 +169,44 @@ function introSeq1() {
     intro2.style.display = 'block';
 }
 
+
+const confirmReply = document.getElementById('confirm-reply');
+const denyReply = document.getElementById('deny-reply');
+const logoContainer = document.getElementById('logo-container');
+
+function showConfirm() {
+    denyReply.style.display = 'none';
+    confirmReply.style.display = 'block';
+    confirmReply.style.width = '0%';
+    confirmReply.style.animationDelay = '0.5s';
+    confirmReply.style.animationPlayState = 'running';
+
+    setTimeout(finishIntro, 4700);
+    function finishIntro() {
+        introBtn2.style.display = 'none';
+        logoContainer.style.display = 'grid';
+        logoContainer.firstElementChild.style.border = '0';
+
+    }
+}
+
+function showDeny() {
+    confirmReply.style.display = 'none';
+    denyReply.style.display = 'block';
+    denyReply.style.width = '0%';
+    denyReply.style.animationDelay = '0.5s';
+    denyReply.style.animationPlayState = 'running';
+
+    setTimeout(nuke, 5000)
+    function nuke() {
+    document.body.innerHTML='';
+    document.body.style.backgroundColor = 'rgb(26, 26, 26)';
+    }
+}
+
+
+const hflogo = document.getElementById('heartfoundLogo')
+const address = document.getElementById('address')
+hflogo.addEventListener('animationend', function() {
+address.style.display= 'block';
+})

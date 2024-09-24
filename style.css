@@ -17,6 +17,13 @@
     --lindigo:rgb(143, 130, 238) ;
     --purple:rgb(208, 101, 235) ;
     --lpurple:rgb(223, 108, 217) ;
+    --gradient0: linear-gradient( var(--red), var(--lred));
+    --gradient1: linear-gradient(var(--orange),var(--lorange));
+    --gradient2: linear-gradient(var(--yellow),var(--lyellow));
+    --gradient3: linear-gradient(var(--green),var(--lgreen));
+    --gradient4: linear-gradient(var(--bloo),var(--lbloo));
+    --gradient5: linear-gradient(var(--indigo),var(--lindigo));
+    --gradient6: linear-gradient(var(--purple),var(--lpurple));
 }
 
 body {
@@ -33,11 +40,12 @@ p {
     max-width: fit-content;
     margin: 0.5em 0 0.5em 0;
     font-size: 20px;
-    font-family: monospace;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
     border-right: 0.1em solid;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 3s steps(24), cursor .7s step-end infinite alternate;
+    animation: typing 1s steps(18), cursor .7s step-end infinite alternate;
     animation-delay: 0s;
     animation-play-state: running;
     animation-fill-mode: forwards;
@@ -68,7 +76,6 @@ p {
     display: none;
 }
 
-
 @keyframes typing {
     0% {width: 0%;}
     100% {width: 100%;}
@@ -80,8 +87,9 @@ p {
 }
 
 .fadeoutwindow {
-    display: inline-block;
+    display: inline-grid;
     width: max-content;
+    justify-content: right;
 }
 
 .fadeout {
@@ -98,6 +106,8 @@ p {
     100% {width: 0%; }
 }
 
+
+/* RAINBOOOOOOOOOW ----------------------------------- */
 .rainbow {
     position: inherit;
     background-clip: text;
@@ -108,42 +118,42 @@ p {
 
 @keyframes rainbow0 {
     100% {
-        background-image: linear-gradient(var(--red), var(--lred));
+        background-image: var(--gradient0);
         color: var(--text-transparent);
     }
 }
 
 @keyframes rainbow1 {
     100% {
-        background-image: linear-gradient(var(--orange), var(--lorange));
+        background-image: var(--gradient1);
         color: var(--text-transparent);
     }
 }
 
 @keyframes rainbow2 {
     100% {
-        background-image: linear-gradient(var(--yellow), var(--lyellow));
+        background-image: var(--gradient2);
         color: var(--text-transparent);
     }
 }
 
 @keyframes rainbow3 {
     100% {
-        background-image: linear-gradient(var(--green), var(--lgreen));
+        background-image: var(--gradient3);
         color: var(--text-transparent);
     }
 }
 
 @keyframes rainbow4 {
         100% {
-        background-image: linear-gradient(var(--bloo), var(--lbloo));
+        background-image: var(--gradient4);
         color: var(--text-transparent);
     }
 }
 
 @keyframes rainbow5 {
         100% {
-        background-image: linear-gradient(var(--indigo), var(--lindigo));
+        background-image: var(--gradient5);
         color: var(--text-transparent);
     }
 }
@@ -151,7 +161,249 @@ p {
 @keyframes rainbow6 {
     
     100% {
-        background-image: linear-gradient(var(--purple), var(--lpurple));
+        background-image:var(--gradient6);
         color: var(--text-transparent);
     }
+}
+/* ---------------------------------------------------- */
+
+.intro-options{
+    position: inherit;
+    display: block;
+    translate: 60vw;
+}
+
+.confirm-btn, .deny-btn{
+    display: block;
+    padding: 1rem 0 1rem 0;
+}
+
+.confirm-btn:hover, .deny-btn:hover{
+    translate: 0 -5px;
+    cursor: pointer;
+}
+
+.intro-replies {
+    position: inherit;
+    display: block;
+    translate: 60vw var(--introY);
+    /* width: 0; */
+}
+
+.confirm-reply, .deny-reply{
+    display: none;
+}
+.deny-reply{
+    text-align: left;
+    max-width: 360px;
+    max-height: 70x;
+    overflow-y: hidden;
+    white-space: wrap;
+}
+
+.logo-container {
+    display: none;
+    justify-items: center;
+    align-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-container :first-child {
+    display: flex;
+    position: absolute;
+    text-align: left;
+    translate: 0 20vh;
+}
+
+.logoReel {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    width: 80vw;
+    height: 30vh;
+    translate: 0 30vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(/Assets/img/logo/HF_CP.png);
+    background-position: center;
+    animation: glitch 7s steps(1) 1.5s both;
+}
+
+@keyframes glitch {
+    0%{ background-image: none;}
+
+    1%,10%{
+        background-image: url(/Assets/img/logo/HF_CP_1.png);
+        filter:hue-rotate(300deg);
+        background-position: 10px -40px;
+    }
+    1%, 9%{
+        background-image: url(/Assets/img/logo/HF_CP_2.png);
+        filter:hue-rotate(60deg);
+        background-position: 20px -20px;
+    }
+    2%, 8%{
+        background-image: url(/Assets/img/logo/HF_CP.png);
+        filter:hue-rotate(0deg);
+        background-position: center;
+
+
+    }
+
+    11%,20%{
+        background-image: url(/Assets/img/logo/HF_ARCN_1.png);
+        filter:hue-rotate(300deg);
+        background-position: 30px -20px;
+    }
+    12%, 19%{
+        background-image: url(/Assets/img/logo/HF_ARCN_2.png);
+        filter:hue-rotate(60deg);
+        background-position: 40px -10px;
+    }
+    13%, 17%{
+        background-image: url(/Assets/img/logo/HF_ARCN.png);
+        filter:hue-rotate(0deg);
+        background-position: center;
+
+    }
+
+    21%,30%{
+        background-image: url(/Assets/img/logo/HF_TRON_1.png);
+        filter:hue-rotate(300deg);
+        background-position: 45px -50px;
+    }
+    22%, 29%{
+        background-image: url(/Assets/img/logo/HF_TRON_2.png);
+        filter:hue-rotate(60deg);
+        background-position: 30px -45px;
+    }
+    23%, 27%{
+        background-image: url(/Assets/img/logo/HF_TRON.png);
+        filter:hue-rotate(0deg);
+        background-position: center;
+    }
+
+    31%,40%{
+        background-image: url(/Assets/img/logo/HF_SPDV_1.png);
+        filter:hue-rotate(300deg);
+        background-position: 33px -50px;
+    }
+    32%, 39%{
+        background-image: url(/Assets/img/logo/HF_SPDV_2.png);
+        filter:hue-rotate(60deg);
+        background-position: 40px 20px;
+    }
+    33%, 37%{
+        background-image: url(/Assets/img/logo/HF_SPDV.png);
+        filter:hue-rotate(0deg);
+        background-position: center;
+    }
+
+    41%,50%{
+        background-image: url(/Assets/img/logo/HF_BR_1.png);
+        filter:hue-rotate(300deg);
+        background-position: 30px -20px;
+    }
+    42%, 49%{
+        background-image: url(/Assets/img/logo/HF_BR_2.png);
+        filter:hue-rotate(60deg);
+        background-position: -20px -10px;
+    }
+    43%, 47%{
+        background-image: url(/Assets/img/logo/HF_BR.png);
+        filter:hue-rotate(0deg);
+        background-position: center;
+    }
+
+    51%,60%{
+        background-image: url(/Assets/img/logo/HF_GS_1.png);
+        filter:hue-rotate(300deg);
+        background-position: 10px -20px;
+    }
+    52%, 59%{
+        background-image: url(/Assets/img/logo/HF_GS_2.png);
+        filter:hue-rotate(60deg);
+        background-position: 20px -10px;
+    }
+    53%, 57%{
+        background-image: url(/Assets/img/logo/HF_GS.png);
+        filter:hue-rotate(0deg);
+        background-position: center;
+    }
+
+    61%, 100%{
+        background-image: none;
+     }
+}
+
+.heartfoundLogo{
+    align-items: center;
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 75vh;
+    translate: -0vw 5vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(/Assets/img/logo/HF_FINAL.png);
+    background-position: center;
+    animation: hf-glitch 1.5s steps(1) both, hf-scale 1.5s forwards;
+    animation-delay: 7s;
+}
+
+@keyframes hf-glitch{
+    0%{ background-image: none;}
+    
+    1% {
+        background-image: url(/Assets/img/logo/HF_FINAL_1.png);
+        translate: -10px 10px;
+        filter: hue-rotate(-180deg);
+    }
+    5%, 30%, 65%{
+        background-image: url(/Assets/img/logo/HF_FINAL_2.png);
+        translate: 5px 7px;
+        filter: hue-rotate(90deg);
+    }
+
+    10%, 40%, 68%{
+        background-image: url(/Assets/img/logo/HF_FINAL_1.png);
+        translate: -0px 20px;
+        filter: hue-rotate(-45deg);
+
+    }
+    70%{
+        background-image: url(/Assets/img/logo/HF_FINAL.png);
+        translate: center;
+
+    }
+}
+
+@keyframes hf-scale {
+    from {scale: 120% 120%; filter: blur(20px)}
+    to {scale:100% 100%;filter: blur(0px)}
+}
+
+.address {
+    translate: 0 62vh;
+    max-width: fit-content;
+    display: none;
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.address :first-child{
+    display: block;
+    position: relative;
+    translate: 0 0;
+}
+
+.address{
+    p{
+        animation-delay: 0.5s;
+        border: 0px;}
+
 }
